@@ -21,20 +21,4 @@ stat = Stat.SummaryStat(name='Weekly number of drinks',
 print('Mean = ', stat.get_mean())
 print('StDev = ', stat.get_stdev())
 
-# fit a Poisson distribution
-fit_results = FitML.fit_poisson(data=cols[0],
-                                x_label='Weekly number of drinks',
-                                bin_width=1)
-print('Fitting a Poisson distribution:', fit_results)
 
-# fit a gamma-Poisson distribution
-fit_results = FitML.fit_gamma_poisson(data=cols[0],
-                                      x_label='Weekly number of drinks',
-                                      bin_width=1)
-print('Fitting a gamma-Poisson distribution:', fit_results)
-
-# fit a beta-binomial distribution
-fit_results = FitML.fit_beta_binomial(data=cols[0],
-                                      x_label='Weekly number of drinks',
-                                      bin_width=1)
-print('Fitting a beta-binomial distribution:', fit_results)

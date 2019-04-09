@@ -21,20 +21,3 @@ stat = Stat.SummaryStat(name='Interarrival times',
 print('Mean = ', stat.get_mean())
 print('StDev = ', stat.get_stdev())
 
-# fit an exponential distribution
-fit_results = FitML.fit_exp(data=cols[0],
-                            x_label='Interarrival Times',
-                            bin_width=0.5)
-print('Fitting an exponential distribution:', fit_results)
-
-# fit a gamma distribution
-fit_results = FitML.fit_gamma(data=cols[0],
-                              x_label='Interarrival Times',
-                              bin_width=0.5)
-print('Fitting a gamm distribution:', fit_results)
-
-# fit a log-normal distribution
-fit_results = FitML.fit_lognorm(data=cols[0],
-                                x_label='Interarrival Times',
-                                bin_width=0.5)
-print('Fitting a log-normal distribution:', fit_results)
