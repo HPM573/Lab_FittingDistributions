@@ -1,19 +1,18 @@
-from SimPy import InOutFunctions as InOutSupport
-from SimPy import FigureSupport as Fig
-from SimPy import StatisticalClasses as Stat
-from SimPy import FittingProbDist_ML as FitML
+import SimPy.InOutFunctions as IO
+import SimPy.Plots.Histogram as Hist
+import SimPy.StatisticalClasses as Stat
+import SimPy.FittingProbDist_ML as FitML
 
 # read interarrival times
-cols = InOutSupport.read_csv_cols(file_name='dataInterarrivalTimes.csv',
+cols = IO.read_csv_cols(file_name='dataInterarrivalTimes.csv',
                                   n_cols=1,
                                   if_ignore_first_row=True,
                                   if_convert_float=True)
 
 # make a histogram
-Fig.graph_histogram(data=cols[0],
+Hist.plot_histogram(data=cols[0],
                     title='Interarrival Times (Minutes)',
-                    bin_width=0.5
-                    )
+                    bin_width=0.5)
 
 # mean and standard deviation
 stat = Stat.SummaryStat(name='Interarrival times',

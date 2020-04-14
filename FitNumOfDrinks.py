@@ -1,16 +1,17 @@
-from SimPy import InOutFunctions as InOutSupport
-from SimPy import FigureSupport as Fig
-from SimPy import StatisticalClasses as Stat
-from SimPy import FittingProbDist_ML as FitML
+import SimPy.InOutFunctions as IO
+import SimPy.Plots.Histogram as Hist
+import SimPy.StatisticalClasses as Stat
+import SimPy.FittingProbDist_ML as FitML
+
 
 # read weekly number of drinks
-cols = InOutSupport.read_csv_cols(file_name='dataNumOfDrinks.csv',
+cols = IO.read_csv_cols(file_name='dataNumOfDrinks.csv',
                                   n_cols=1,
                                   if_ignore_first_row=True,
                                   if_convert_float=True)
 
 # make a histogram
-Fig.graph_histogram(data=cols[0],
+Hist.plot_histogram(data=cols[0],
                     title='Weekly Number of Drinks',
                     bin_width=1
                     )
